@@ -1,5 +1,7 @@
 # src/app.py
-from service.GithubService import GithubService 
+from service.githubService import GithubService 
 
-repository = GithubService()  
-repository.get_all_commits(repo_owner='untalbry', repo_name='PythonLeetcodeSolutions')
+github_service = GithubService()  
+commits = github_service.get_all_commits(repo_owner="untalbry", repo_name="Notion_proyect_tracker")
+for commit in commits:
+    print(commit, end='\n\n')

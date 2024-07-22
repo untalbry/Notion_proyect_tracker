@@ -1,6 +1,8 @@
 import os
 from dotenv import load_dotenv
 import requests
+
+from model.commit import Commit
 class GithubService():
     def __init__(self):
         env_path = os.path.join(os.path.dirname(__file__), '../..', 'venv', '.env')
@@ -21,13 +23,12 @@ class GithubService():
         response = requests.get(url, headers=self.headers)
         if response.status_code == 200:
             commits_data = response.json()
-            for commit in commits_data:
-                commit_message = commit['commit']['message']
-                commit_sha = commit['sha']
+            for c in commits_data:
+                commit_message = c['commit']['message']
+                commit_sha = c['sha']
                 commit_url = f'https://github.com/{repo_owner}/{repo_name}/commit/{commit_sha}'
-            
-                print(f"Commit SHA: {commit_sha}")
-                print(f"Mensaje: {commit_message}")
-                print(f"Enlace: {commit_url}")
+                commit = Commit(message=commit_message, sha=commit_sha, url=commit_url)
+                commits.append(commit)
         else:
             print(f"Error {response.status_code}: {response.json().get('message', 'No se pudo obtener información del repositorio')}") 
+        return commits
