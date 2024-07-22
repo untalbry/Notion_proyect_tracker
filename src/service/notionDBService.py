@@ -47,7 +47,6 @@ class NotionDBService():
             }
             response = requests.post(self.CREATE_URL, headers=self.headers, json=new_page)
             if response.status_code == 200:
-                print(f"Commit inserted successfully")
+                print(f"200: Commit inserted successfully")
             else:
-                print(f"Error inserting commit: {response.status_code}")
-                print(response.json())
+                raise ValueError(f"Exception in inserting commit: {response.status_code}\n{response.json}")
