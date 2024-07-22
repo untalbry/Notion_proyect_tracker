@@ -3,6 +3,7 @@
     <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/pip">
   </a>
 </p>
+
 # Repository Tracker at Notion
 Track your development team with Notion and GitHub. <br> 
 
