@@ -2,8 +2,10 @@ import os
 from dotenv import load_dotenv
 import requests
 class Repository():
-    def get_commits_info():
-        env_path = os.path.join(os.path.dirname(__file__), 'venv', '.env')
+    def __init__(self) -> None:
+        pass
+    def get_commits_info(self):
+        env_path = os.path.join(os.path.dirname(__file__), '../..', 'venv', '.env')
         load_dotenv(env_path)
         token = os.getenv('TOKEN')
         repo_owner = 'untalbry'
