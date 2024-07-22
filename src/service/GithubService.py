@@ -32,3 +32,4 @@ class GithubService():
         else:
             print(f"Error {response.status_code}: {response.json().get('message', 'No se pudo obtener información del repositorio')}") 
         return commits
+    
