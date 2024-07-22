@@ -1,5 +1,5 @@
 # src/app.py
+from service.GithubService import GithubService 
 
-from service.Repository import Repository 
-repository = Repository()  
-repository.get_commits_info()
+repository = GithubService()  
+repository.get_all_commits(repo_owner='untalbry', repo_name='PythonLeetcodeSolutions')
