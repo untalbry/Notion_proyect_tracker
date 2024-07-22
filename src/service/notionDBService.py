@@ -50,3 +50,8 @@ class NotionDBService():
                 print(f"200: Commit inserted successfully")
             else:
                 raise ValueError(f"Exception in inserting commit: {response.status_code}\n{response.json}")
+    #TODO:
+    def insert_issues_list():
+        pass
+    def insert_pr_list():
+        pass
