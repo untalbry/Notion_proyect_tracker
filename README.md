@@ -32,5 +32,5 @@ source venv/bin/activate
 
 ```bash 
 install -r requirements.txt
-'''
+```
 
