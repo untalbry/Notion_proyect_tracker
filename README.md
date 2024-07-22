@@ -16,7 +16,7 @@ Track your development team with Notion and GitHub. <br>
 
 
 
-### Installation
+### Installation in local
 1. Clone the repository in your local
 2. Run the next script to create a virtual envoriment and activate it 
    
